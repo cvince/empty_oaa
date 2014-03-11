@@ -4,7 +4,6 @@ var User = require('../models/User');
 
 exports.collection = function(req, res){
   res.setHeader('Content-type', 'application/json');
-  res.send(JSON.stringify({msg: 'hello world!'}));
   User.find({}, function(err, users){
     if(err){
       res.writeHead(500);

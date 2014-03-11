@@ -26,3 +26,26 @@ exports.createUser = function(req, res){
     }
   });
 };
+
+exports.updateUser = function(req, res) {
+  var id = req.params.id;
+  var user = req.body;
+  User.update({'_id': String(id)}, user, function(err){
+    if(err) {
+      res.send({'error': err});
+    } else {
+      res.send({msg: 'success'});
+    }
+  });
+};
+
+exports.deleteUser = function(req, res) {
+  var id = String(req.params.id);
+  User.remove({'_id': id}, function(err){
+    if(err){
+      res.send({'error': err});
+    } else {
+      res.send({'msg': 'success'});
+    }
+  });
+};

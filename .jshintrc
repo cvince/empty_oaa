@@ -24,5 +24,6 @@
   "undef": true,
   "unused": true,
   "indent": 2,
-  "node": true
+  "node": true,
+  "quotmark": false
 }

@@ -13,7 +13,7 @@ describe('Users JSON api', function(){
     superagent.get("http://localhost:3000/api/v1/users").end(function(err, res){
       expect(err).to.be.eql(null);
       done();
-    })
+    });
   });
 
   it('should be able to create a user', function(done){
@@ -27,7 +27,7 @@ describe('Users JSON api', function(){
     });
   });
 
-it('can get users collection', function(done){
+  it('can get users collection', function(done){
     superagent.get('http://localhost:3000/api/v1/users').end(function(e, res){
       expect(e).to.eql(null);
       expect(res.body.length).to.be.above(0);

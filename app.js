@@ -1,8 +1,9 @@
+"use strict";
+
 var express = require('express');
 var http = require('http');
-var path = require('path');
-
-app = express();
+//var path = require('path');
+var app = express();
 
 app.configure(function(){
   app.use(express.bodyParser());
@@ -11,7 +12,7 @@ app.configure(function(){
 
 app.configure('development', function(){
   app.use(express.errorHandler());
-})
+});
 
 var users = require('./routes/users');
 
@@ -27,6 +28,6 @@ var server = http.createServer(app);
 
 server.listen(3000, function(){
   console.log('server running');
-})
+});
 
 

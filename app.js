@@ -30,5 +30,3 @@ server.listen(3000, function(){
 })
 
 
-'use strict';
-//jshint unused:false

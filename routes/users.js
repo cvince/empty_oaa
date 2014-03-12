@@ -14,6 +14,18 @@ exports.collection = function(req, res){
   });
 };
 
+exports.findById = function(req, res) {
+  res.setHeader('Content-Type', 'application/json');
+  var id = req.params.id;
+  User.findOne({'_id': String(id)}, function(err, responseUser) {
+    if(err) {
+      res.send({'error': err});
+    } else {
+      res.send(responseUser);
+    }
+  });
+};
+
 exports.createUser = function(req, res){
   res.setHeader('Content-type', 'application/json');
   var user = new User(req.body);

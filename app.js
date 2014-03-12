@@ -2,11 +2,12 @@
 
 var express = require('express');
 var http = require('http');
-//var path = require('path');
+var path = require('path');
 var app = express();
 
 app.configure(function(){
   app.use(express.bodyParser());
+  app.use(express.static(path.join(__dirname, 'build')));
   app.use(app.router);
 });
 
@@ -18,6 +19,7 @@ var users = require('./routes/users');
 
 app.get('/api/v1/users', users.collection);
 app.get('/api/vi/users/:id', users.findById);
+app.get('/', users.servePage);
 
 app.post('/api/v1/users', users.createUser);
 

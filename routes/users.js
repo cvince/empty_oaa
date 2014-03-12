@@ -61,3 +61,7 @@ exports.deleteUser = function(req, res) {
     }
   });
 };
+
+exports.servePage = function(req, res){
+  res.render('hello');
+}
